@@ -1,0 +1,299 @@
+	*{
+		margin: 0;
+		padding: 0;
+		list-style:none;
+		box-sizing: border-box;
+	}
+	html,body{
+		height: 100%;
+	}
+#ADB{
+    position: relative;
+    overflow: hidden;
+}
+#ADB2{
+    position: relative;
+    overflow: hidden;
+}
+
+.prev{
+    transition:.4s;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 55px;
+    height: 80px;
+    margin-top: -40px;
+    background: url(../img/prev.png) no-repeat center rgba(0,0,0,.5);
+    color: transparent !important;
+}
+.next{
+    transition:.4s ;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    width: 55px;
+    height: 80px;
+    margin-top: -40px;
+    background: url(../img/next.png) no-repeat center rgba(0,0,0,.5);
+
+    color: transparent !important;
+}
+.next:hover{
+    transform: translate(5px, 0);
+}
+.prev:hover{
+    transform: translate(-5px, 0);
+}
+@media (max-width: 480px){
+    .prev{
+        width: 55px;
+        height: 80px;
+        bottom: auto;
+        top: 50%;
+        margin-top: -40px;
+        left: 0;
+        background: url(../img/prev.png) no-repeat center rgba(0,0,0,.5);
+    }
+    .next{
+        width: 55px;
+        height: 80px;
+        bottom: auto;
+        top: 50%;
+        margin-top: -40px;
+        right: 0;
+        background: url(../img/next.png) no-repeat center rgba(0,0,0,.5);
+    }    
+}
+.pages{
+            padding: 0;
+            width: 100%;
+            position:absolute;
+            transform: translateX(100%);
+            top:0;
+            text-align: center;   
+            line-height: 0; 
+}
+.pages img{
+    width: 100%;
+}
+	.pages > a > .content{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		padding: 0 80px;
+		z-index: 1;
+	}
+
+	.pages > a > .content:before{
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background:rgba(0,217,163,.8);
+		opacity: 0; 
+		transition: .7s;
+	}
+	
+	.pages > a > .content > h2{
+		position: relative;
+		z-index: 1;
+		padding: 60px 0;
+		color: #fff;
+		font-family: '微軟正黑體','sans-serif';
+		text-align: center;
+	}
+	.pages > a > .content > p {
+		position: relative;
+		z-index: 1;		
+		color: #fff;
+		font-family: '微軟正黑體','sans-serif';
+		text-align: center;
+		line-height: 1.7em;		
+		opacity: 0;
+		transform: translateY(50px);
+		transition: .7s;
+		font-weight: bold;
+	}
+	.pages:hover .content:before{
+		opacity: 1;
+	}
+	 .pages:hover .content > p{
+	 	opacity: 1;
+	 	transform: translateY(0px);
+	 }
+
+            .pages.active{
+                transform: translateX(0);
+                opacity: 1;
+            }
+            .pages.ltr_in {
+                left: 0\9;
+                transform: translateX(0);
+                -webkit-animation: left-in linear .5s  ;
+                -moz-animation: left-in linear  .5s  ;
+                -ms-animation: left-in linear  .5s  ;
+                -o-animation: left-in linear  .5s  ;
+                animation: left-in linear  .5s ;
+                animation-fill-mode:forwards;
+            }
+            .pages.ltr_out {
+
+                -webkit-animation: left-out linear  .5s  ;
+                -moz-animation: left-out linear .5s  ;
+                -ms-animation: left-out linear  .5s  ;
+                -o-animation: left-out linear  .5s  ;
+                animation: left-out linear  .5s  ;
+                animation-fill-mode:forwards;
+            }
+            .pages.rtl_in {
+                left:0\9;
+                transform: translateX(0);
+                -webkit-animation: right-in linear  .5s  ;
+                -moz-animation: right-in linear  .5s  ;
+                -ms-animation: right-in linear  .5s  ;
+                -o-animation: right-in linear  .5s ;
+                animation: right-in linear  .5s ;
+                animation-fill-mode:forwards;
+            }
+            .pages.rtl_out {
+
+                -webkit-animation: right-out linear  .5s ;
+                -moz-animation: right-out linear  .5s  ;
+                -ms-animation: right-out linear  .5s  ;
+                -o-animation: right-out linear  .5s  ;
+                animation: right-out linear  .5s  ;
+                animation-fill-mode:forwards;
+            }
+    .pagination{
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+        font-size: 0;
+        transform: translateY(100px);
+        transition: .7s;
+    }
+    #ADB:hover .pagination{
+        transform: translateY(0);
+    }    
+    .pagination > li{
+        display: inline-block;
+        margin: 0 5px;
+        transition: .3s;
+        opacity: .5;
+    }
+
+    .pagination > li:hover{
+        transform: scale(1.1,1.1);
+        opacity: 1;
+    }
+
+    .pagination > li.active{
+        transform: scale(1.1,1.1);
+        opacity: 1;
+    }
+
+@-webkit-keyframes left-in {
+
+    0% {
+            
+
+        transform: translateX(-100%);
+    }
+
+     100% {
+
+
+        transform: translateX(0);
+    }
+}
+@-webkit-keyframes right-in {
+      /*0%{left: 900px;}*/
+    0% {
+
+
+    transform: translateX(100%);
+    }
+
+     100% {
+
+
+    transform: translateX(0);
+    }
+}
+@-webkit-keyframes left-out {
+     0% {
+    opacity: 1;
+    transform: translateX(0);
+
+    }
+        /*100%{left: 900px;}*/
+        100% {
+        
+    transform: translateX(100%);
+    }
+}
+@-webkit-keyframes right-out {
+     0% {
+    opacity: 1;
+
+    transform: translateX(0);
+    }
+        /*100%{left: -900px;}*/
+        100% {
+        
+    transform: translateX(-100%);
+    }
+}
+@keyframes left-in {
+      /*0%{left: -900px;}*/
+          0% {
+
+
+            transform: translateX(-100%);
+    }
+
+     100% {
+
+        transform: translateX(0);
+    }
+}
+@keyframes right-in {
+      /*0%{left: 900px;}*/
+          0% {
+
+
+    transform: translateX(100%);
+    }
+
+     100% {
+
+    transform: translateX(0);
+    }
+}
+@keyframes left-out {
+     0% {
+    opacity: 1;
+    transform: translateX(0);
+    }
+        /*100%{left: 900px;}*/
+        100% {
+    transform: translateX(100%);
+    }
+}
+@keyframes right-out {
+     0% {
+    opacity: 1;
+    transform: translateX(0);
+    }
+        /*100%{left: -900px;}*/
+        100% {
+
+        transform: translateX(-100%);
+    }
+}             
