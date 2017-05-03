@@ -74,7 +74,7 @@
 			          time,
 			          i,
 			          max;
-				  adb.style.height =  pages[0].clientHeight +'px';
+				  adb.style.height =  pagesImg[0].clientHeight +'px';
 		          
 					  pages[0].classList.add('active');
 						pnF.setAttribute('class','pagination');
