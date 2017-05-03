@@ -59,7 +59,7 @@
 			          var pages = document.querySelectorAll('.pages'),
 			          pagesImg = document.querySelectorAll('.pages img'),
 			          anncPrev = document.querySelector('.prev'),
-			          adb = document.getElementById('ADB2'), 
+			          adb = document.document.querySelector('ADB2'), 
 			          anncNext = document.querySelector('.next'),
 			          allElem = document.querySelectorAll('#ADB *'),
 			          pnF = document.createElement('ul'),
@@ -74,7 +74,7 @@
 			          time,
 			          i,
 			          max;
-
+				  adb.style.height =  pages[0].clientHeight +'px';
 		          
 					  pages[0].classList.add('active');
 						pnF.setAttribute('class','pagination');
@@ -331,8 +331,6 @@
 	document.addEventListener('DOMContentLoaded',function() {
 		init();
 	})	
-	window.onload=function(){
-		document.querySelector('#ADB2').style.height = document.querySelectorAll('.pages')[0].clientHeight +'px';
-	}	
+	
 })(window)
 
