@@ -59,7 +59,7 @@
 			          var pages = document.querySelectorAll('.pages'),
 			          pagesImg = document.querySelectorAll('.pages img'),
 			          anncPrev = document.querySelector('.prev'),
-			          adb = document.document.querySelector('ADB2'), 
+			          adb = document.document.querySelector('#ADB2'), 
 			          anncNext = document.querySelector('.next'),
 			          allElem = document.querySelectorAll('#ADB *'),
 			          pnF = document.createElement('ul'),
